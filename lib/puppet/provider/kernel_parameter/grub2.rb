@@ -8,7 +8,7 @@ Puppet::Type.type(:kernel_parameter).provide(:grub2, :parent => Puppet::Type.typ
 
   default_file { '/etc/default/grub' }
 
-  lens { 'Shellvars_list.lns' }
+  lens { 'Shellvars.lns' }
 
   resource_path do |resource|
     "$target/#{section(resource)}/value[.=~regexp('^#{resource[:name]}(=.*)?$')]"
